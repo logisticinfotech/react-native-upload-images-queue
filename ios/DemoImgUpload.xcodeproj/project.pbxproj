@@ -27,6 +27,7 @@
 		692E8DDB20AC45D300B9E333 /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 692E8DBA20AC45C600B9E333 /* libRCTCameraRoll.a */; };
 		692E8DDE20AC46D600B9E333 /* CompressImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8DDD20AC46D500B9E333 /* CompressImageManager.m */; };
 		692E8DFC20AC721200B9E333 /* lblNative.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8DFB20AC721200B9E333 /* lblNative.m */; };
+		69C1EED820B980C1009406CA /* Default736h.png in Resources */ = {isa = PBXBuildFile; fileRef = 69C1EED720B97E57009406CA /* Default736h.png */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 /* End PBXBuildFile section */
@@ -342,6 +343,7 @@
 		692E8DDD20AC46D500B9E333 /* CompressImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompressImageManager.m; sourceTree = "<group>"; };
 		692E8DFA20AC721200B9E333 /* lblNative.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lblNative.h; sourceTree = "<group>"; };
 		692E8DFB20AC721200B9E333 /* lblNative.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lblNative.m; sourceTree = "<group>"; };
+		69C1EED720B97E57009406CA /* Default736h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default736h.png; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				69C1EED720B97E57009406CA /* Default736h.png */,
 			);
 			name = DemoImgUpload;
 			sourceTree = "<group>";
@@ -639,6 +642,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				80DC925BCA2A0433B3A2BBAD /* [CP] Embed Pods Frameworks */,
+				A6376767A040ADD5F75804F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1021,6 +1026,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				69C1EED820B980C1009406CA /* Default736h.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,6 +1063,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80DC925BCA2A0433B3A2BBAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoImgUpload/Pods-DemoImgUpload-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6376767A040ADD5F75804F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoImgUpload/Pods-DemoImgUpload-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

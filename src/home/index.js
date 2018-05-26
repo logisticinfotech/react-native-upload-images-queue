@@ -1,3 +1,8 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
 
 import React, { Component } from "react";
 import {
@@ -26,7 +31,8 @@ export default class Home extends Component {
     super(props);
     this.state = {
       images: [],
-      uploadAll: false
+      uploadAll: false,
+      uploadedImg: 0
     };
   }
 
@@ -79,18 +85,23 @@ export default class Home extends Component {
       if (uploadResponse) {
         let newItem = Object.assign({ uploadStatus: true }, item);
         let imgArray = this.replaceAt(this.state.images, index, newItem);
-        this.setState({ images: imgArray });
+        this.setState(pre => {
+          return { uploadAll: true, uploadedImg: pre.uploadedImg + 1 };
+        });
+        this.setState(pre => {
+          return { images: imgArray, uploadedImg: (pre.uploadedImg.length < imgArray.length)?pre.uploadedImg + 1:pre.uploadedImg };
+        });
       }
     }
   }
 
   _renderItem = ({ item, index }) => (
-    <View style={{ flexDirection: "row", flex: 1 }}>
+    <View style={{ flexDirection: "row" }}>
       <Image
         style={[styles.image, { alignContent: "flex-start" }]}
         source={{ uri: item.uri }}
       />
-      {item.uploadStatus === true ? (
+      {/* {item.uploadStatus === true ? (
         <Text
           style={{
             fontSize: 17,
@@ -116,25 +127,35 @@ export default class Home extends Component {
             Upload{" "}
           </Text>
         </TouchableOpacity>
-      )}
+      )} */}
     </View>
   );
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}> Multiple Image Uploading </Text>
+        <Text style={styles.welcome}> Welcome to React Native! </Text>
+
+        <FlatList
+          style={{ marginTop: 20, marginBottom: 20, width: "100%" }}
+          data={this.state.images}
+          extraData={this.state}
+          keyExtractor={(item, index) => index}
+          renderItem={this._renderItem}
+          numColumns={3}
+        />
 
         {this.state.uploadAll ? (
           <Text
             style={{
               fontSize: 17,
               color: "gray",
-              alignContent: "flex-end"
+              alignContent: "flex-end",
+              marginBottom: 20
             }}
           >
             {" "}
-            Upload All{" "}
+            Upload All ({this.state.uploadedImg}/{this.state.images.length})
           </Text>
         ) : (
           <TouchableOpacity
@@ -145,7 +166,8 @@ export default class Home extends Component {
               style={{
                 fontSize: 17,
                 color: "black",
-                alignContent: "flex-end"
+                alignContent: "flex-end",
+                marginBottom: 20
               }}
             >
               {" "}
@@ -153,14 +175,6 @@ export default class Home extends Component {
             </Text>
           </TouchableOpacity>
         )}
-
-        <FlatList
-          style={{ marginTop: 20, marginBottom: 20, width: "100%" }}
-          data={this.state.images}
-          extraData={this.state}
-          keyExtractor={(item, index) => index}
-          renderItem={this._renderItem}
-        />
       </View>
     );
   }
@@ -195,3 +209,4 @@ const styles = StyleSheet.create({
     margin: 10
   }
 });
+
