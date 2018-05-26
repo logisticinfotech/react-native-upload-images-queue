@@ -33,7 +33,7 @@ RCT_EXPORT_MODULE()
 // Native Methods
 RCT_EXPORT_METHOD(fetchPhotos:(NSString *)imgURL resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSBlockOperation *eezyBlockOperation = [NSBlockOperation blockOperationWithBlock:^{
+  NSBlockOperation *imageblock = [NSBlockOperation blockOperationWithBlock:^{
   
     NSLog(@"local Image URL :====> %@",imgURL);
     
@@ -123,7 +123,7 @@ RCT_EXPORT_METHOD(fetchPhotos:(NSString *)imgURL resolver:(RCTPromiseResolveBloc
   }];
   
   // Add block in queue
-    [[AppDelegate sharedAppDelegate].queue addOperation:eezyBlockOperation];
+    [[AppDelegate sharedAppDelegate].queue addOperation:imageblock];
 }
 
 @end
