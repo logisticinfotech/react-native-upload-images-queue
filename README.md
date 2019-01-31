@@ -1,3 +1,8 @@
+<p align="left">
+  <a href="https://www.logisticinfotech.com/blog/react-native-import-resized-image-photo-gallery"><img alt="npm version" src="https://img.shields.io/badge/npm-v4.0.0.0-green.svg"></a>
+  <a href="https://www.logisticinfotech.com/blog/react-native-import-resized-image-photo-gallery"<><img src="https://img.shields.io/badge/license-MIT-orange.svg"></a>
+</p>
+
 File upload is an essential aspect of any project. Given this importance, it is surprising that many developers face challenges of adding file upload feature to their projects, specially while they have to deal with multiple image upload and project is mostly related to images.
 
 Specifically for mobile application we need to take care of memory being used by application and while we have number of images being uploaded from mobile application.
